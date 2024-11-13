@@ -1104,4 +1104,38 @@ now comeback to vscode
 (intialize your git)
 you wont see this but when you uncheck a  hidden files in files explorer you will find .git file
 ----- git add --all
-(add all files in our directory to git)
+(add all files in our directory to git
+i.e stages the files)
+----- git commit -m "initial commit"
+(commits the files)
+if username and password not configured do it
+git branch -M main
+first create a branch on which your code will reside
+git remote add origin https://github.com/your-username/your-repository.git
+now set the remote github url that you have created on github account
+git push -u origin main
+push your local changes onto remote repository on the main branch
+Thus all code is stored on main branch on your remote repository
+
+Deploy application on heroku platform:
+signup online and install heroku CLI on machine
+and also git on machine 
+now follow the commands:
+check if heroku installed on machine
+heroku --version
+For login:
+heroku login
+once logged in
+heroku create
+this will create folder same as origin like remote repository
+if git remote
+you can see two folders heroku and origin
+now push local changes to heroku remote repository
+git push heroku main
+now our code is in heroku remote repository
+but it does not know what to do so it throws error
+it just knows that its a  python application
+so now we create a file from root by name Procfile and give the command
+web: uvicorn app.main:app --host= 0.0.0.0 --port=${PORT: -5000}
+
+run the application and it accepts any hostnumber and any port number provided by heroku
